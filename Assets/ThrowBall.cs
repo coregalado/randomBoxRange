@@ -16,8 +16,8 @@ public class ThrowBall : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 2.0f;
-            Vector3 ballPos = Camera.current.ScreenToWorldPoint(mousePos);
+            mousePos.z = 5.0f;
+            Vector3 ballPos = Camera.main.ScreenToWorldPoint(mousePos);
             Instantiate(ballObj, ballPos, Quaternion.identity);
         }
 	}
