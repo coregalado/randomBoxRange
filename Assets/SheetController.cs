@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SheetController : MonoBehaviour {
+public class SheetController : MonoBehaviour
+{
     public float power;
     private Rigidbody rb;
 
@@ -16,5 +17,14 @@ public class SheetController : MonoBehaviour {
         float h = Input.GetAxis("Horizontal");
 
         rb.AddTorque(transform.up * power * h);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ball")
+        {
+            Destroy(other.gameObject);
+        }
+
     }
 }
